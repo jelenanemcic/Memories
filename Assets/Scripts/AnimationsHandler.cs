@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,15 +29,62 @@ public class AnimationsHandler : MonoBehaviour
         else
         {
             float forward = Input.GetAxis("Vertical");
-            if (forward < 0 && Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.LeftShift) && Math.Abs(forward) > float.Epsilon)
             {
-                forward = -1f;
+                switch(forward > 0)
+                {
+                    case true:
+                        forward = 1f;
+                        break;
+
+                    case false:
+                        forward = -1f;
+                        break;
+                }
             }
-            else if (forward > 0 && Input.GetKey(KeyCode.LeftShift))
+            else if(Math.Abs(forward) > float.Epsilon)
             {
-                forward = 1f;
+                switch (forward > 0)
+                {
+                    case true:
+                        forward = 0.5f;
+                        break;
+
+                    case false:
+                        forward = -0.5f;
+                        break;
+                }
             }
             float turn = Input.GetAxis("Horizontal");
+
+            if (Input.GetKey(KeyCode.LeftShift) && Math.Abs(turn) > float.Epsilon)
+            {
+                switch (turn > 0)
+                {
+                    case true:
+                        turn = 1f;
+                        break;
+
+                    case false:
+                        turn = -1f;
+                        break;
+                }
+            }
+            else if(Math.Abs(turn) > float.Epsilon)
+            {
+                switch (turn > 0)
+                {
+                    case true:
+                        turn = 0.5f;
+                        break;
+
+                    case false:
+                        turn = -0.5f;
+                        break;
+                }
+            }
+
+
 
             animator.SetFloat("forward", forward);
             animator.SetFloat("turn", turn);
