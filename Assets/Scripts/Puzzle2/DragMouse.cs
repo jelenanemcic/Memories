@@ -3,14 +3,17 @@
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class DragMouse : MonoBehaviour
 {
     private Vector3 mOffset;
     private float mZCoord;
+    private bool isDragging;
     private CellController[] cells;
     [SerializeField] private CellController currentCell;
     [SerializeField] private float yHeight;
+
 
 
     private void Start()
@@ -18,6 +21,10 @@ public class DragMouse : MonoBehaviour
         cells = FindObjectsOfType<CellController>();
     }
 
+    private void Update()
+    {
+        isDragging = Input.GetMouseButtonDown(0);
+    }
 
     private void OnMouseDown()
 
@@ -69,36 +76,42 @@ public class DragMouse : MonoBehaviour
 
     }
 
+    private float CalculateDistance(Transform tf1, Transform tf2)
+    {
+        float distance = Mathf.Sqrt(Mathf.Pow(tf1.position.x - tf2.position.x,2)+ Mathf.Pow(tf1.position.z - tf2.position.z, 2));
+
+        return distance;
+    }
+
     private void OnMouseExit()
     {
-        //if (Input.GetMouseButtonUp(0))
+        MoveToClosest();
+    }
+
+    private void MoveToClosest()
+    {
+        if (!isDragging)
         {
-            // Debug.Log(gameObject.transform.position.ToString());
             float minDistance = 0f;
+            bool firstPass = true;
             currentCell.SetIsFree(true);
+            Transform currentTf = gameObject.transform;
             foreach (var cell in cells)
             {
                 if (cell.GetIsFree())
                 {
-                    float currentDistance = CalculateDistance(gameObject.transform, cell.transform);
-                    if (minDistance == 0 || currentDistance < minDistance)
+                    float currentDistance = CalculateDistance(currentTf, cell.transform);
+                    if (firstPass || currentDistance < minDistance)
                     {
                         minDistance = currentDistance;
                         currentCell = cell;
                     }
+                    firstPass = false;
                 }
             }
             currentCell.SetIsFree(false);
             gameObject.transform.position = new Vector3(currentCell.transform.position.x, yHeight, currentCell.transform.position.z);
         }
     }
-
-    private float CalculateDistance(Transform tf1, Transform tf2)
-    {
-        float distance = Mathf.Sqrt(Mathf.Pow(tf1.position.x - tf2.position.x,2)+ Mathf.Pow(tf1.position.y - tf2.position.y, 2));
-
-        return distance;
-    }
-
 
 }
