@@ -17,75 +17,24 @@ public class AnimationsHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HandleInput();
+        HandleAnimations();
     }
 
-    private void HandleInput()
+    private void HandleAnimations()
     {
-        if (Input.GetButton("Jump") && !animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
+        if (Input.GetButton("Jump"))
         {
             animator.SetTrigger("jump");
         }
         else
         {
-            float forward = Input.GetAxis("Vertical");
-            if (Input.GetKey(KeyCode.LeftShift) && Math.Abs(forward) > float.Epsilon)
+            float forward = Input.GetAxis("Vertical")/2;
+            float turn = Input.GetAxis("Horizontal")/2;
+            if (Input.GetKey(KeyCode.LeftShift))
             {
-                switch(forward > 0)
-                {
-                    case true:
-                        forward = 1f;
-                        break;
-
-                    case false:
-                        forward = -1f;
-                        break;
-                }
+                forward *= 2;
+                turn *= 2;
             }
-            else if(Math.Abs(forward) > float.Epsilon)
-            {
-                switch (forward > 0)
-                {
-                    case true:
-                        forward = 0.5f;
-                        break;
-
-                    case false:
-                        forward = -0.5f;
-                        break;
-                }
-            }
-            float turn = Input.GetAxis("Horizontal");
-
-            if (Input.GetKey(KeyCode.LeftShift) && Math.Abs(turn) > float.Epsilon)
-            {
-                switch (turn > 0)
-                {
-                    case true:
-                        turn = 1f;
-                        break;
-
-                    case false:
-                        turn = -1f;
-                        break;
-                }
-            }
-            else if(Math.Abs(turn) > float.Epsilon)
-            {
-                switch (turn > 0)
-                {
-                    case true:
-                        turn = 0.5f;
-                        break;
-
-                    case false:
-                        turn = -0.5f;
-                        break;
-                }
-            }
-
-
-
             animator.SetFloat("forward", forward);
             animator.SetFloat("turn", turn);
         }
