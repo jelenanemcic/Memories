@@ -19,7 +19,9 @@ public class DragMouse : MonoBehaviour
     private void Start()
     {
         cells = FindObjectsOfType<CellController>();
+        Cursor.visible = true;
     }
+
 
     private void Update()
     {

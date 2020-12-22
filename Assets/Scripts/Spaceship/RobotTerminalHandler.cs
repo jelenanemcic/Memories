@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class RobotTerminalHandler : MonoBehaviour
 {
     [SerializeField] private Canvas terminalCanvas;
+    [SerializeField][Tooltip("Number of puzzle between 1 and 9.")] private int numberOfPuzzle;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class RobotTerminalHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene(numberOfPuzzle);
             }
         }
     }
