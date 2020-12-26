@@ -87,7 +87,10 @@ public class DragMouse : MonoBehaviour
 
     private void OnMouseExit()
     {
-        MoveToClosest();
+        if (!Input.GetKey(KeyCode.Mouse0))
+        {
+            MoveToClosest();
+        }
     }
 
     private void MoveToClosest()
