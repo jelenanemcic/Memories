@@ -8,6 +8,8 @@ public class MouseDragBoard : MonoBehaviour
     private float mZCoord;
     private bool isDragging;
     private FieldController[] cells;
+    private StartGameHandler startGameHandler;
+    private bool gotItPressed = false;
     [SerializeField] private FieldController currentCell;
     [SerializeField] private float yHeight = 0.1f;
 
@@ -16,6 +18,7 @@ public class MouseDragBoard : MonoBehaviour
     private void Start()
     {
         cells = FindObjectsOfType<FieldController>();
+        startGameHandler = FindObjectOfType<StartGameHandler>();
         Cursor.visible = true;
     }
 
@@ -23,21 +26,24 @@ public class MouseDragBoard : MonoBehaviour
     private void Update()
     {
         isDragging = Input.GetMouseButtonDown(0);
+        gotItPressed = startGameHandler.GetGotIsPressed();
     }
 
     private void OnMouseDown()
 
     {
-
-        mZCoord = Camera.main.WorldToScreenPoint(
+        if (gotItPressed)
+        {
+            mZCoord = Camera.main.WorldToScreenPoint(
 
             gameObject.transform.position).z;
 
 
 
-        // Store offset = gameobject world pos - mouse world pos
+            // Store offset = gameobject world pos - mouse world pos
 
-        mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
+            mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
+        }
 
     }
 
@@ -70,8 +76,10 @@ public class MouseDragBoard : MonoBehaviour
     private void OnMouseDrag()
 
     {
-
-        transform.position = GetMouseAsWorldPoint() + mOffset;
+        if (gotItPressed)
+        {
+            transform.position = GetMouseAsWorldPoint() + mOffset;
+        }
 
     }
 
