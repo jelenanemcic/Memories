@@ -8,6 +8,8 @@ public class AddForceVertical : MonoBehaviour
     [SerializeField] private float thrust = 2000f;
     private Rigidbody rigidbody;
 
+    private bool gotItPressed = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,11 +19,23 @@ public class AddForceVertical : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gotItPressed)
+        {
+            AddForce();
+        }        
+    }
+
+    private void AddForce()
+    {
         if (Math.Abs(Input.GetAxis("Vertical")) > float.Epsilon)
         {
             float force = Time.deltaTime * thrust * Input.GetAxis("Vertical");
             rigidbody.AddRelativeForce(-force, 0, 0);
         }
-        
+    }
+
+    public void OnButton()
+    {
+        gotItPressed = true;
     }
 }

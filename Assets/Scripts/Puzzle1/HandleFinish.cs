@@ -20,7 +20,8 @@ public class HandleFinish : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            // Do win mechanics
+            // Play the cutscene
+            Debug.Log("Player wins");
         }
     }
 }
