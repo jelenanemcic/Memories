@@ -282,7 +282,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Story
+  m_Text: Entry 9
 --- !u!222 &303753209
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -327,7 +327,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.097232126, g: 0.40795207, b: 0.8962264, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -425,7 +425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0.099416494, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.392}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -575,39 +575,13 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078461205}
-  m_Text: "Sed eu semper erat, in viverra nunc. \nUt nec pulvinar nisl.\r\n\r\nMauris
-    congue mauris ac enim \nelementum tincidunt. Duis tincidunt \nvelit et velit
-    congue, et tempor metus \npellentesque. Maecenas purus leo, \nrutrum sit amet
-    suscipit eu, porta in \ndiam. Vestibulum aliquam odio ipsum,\net lacinia purus
-    luctus a. \nMaecenas semper finibus nisl, \nquis sagittis velit viverra vel.
-    \nSed mattis leo eros, id consectetur \nerat tristique a. Quisque eu libero a
-    \ndui eleifend pharetra. In ipsum nisl,\nplacerat sed vulputate vitae, \nmattis
-    egestas turpis. Morbi efficitur, \nquam a rutrum maximus, neque tellus \nvestibulum
-    turpis, ut ullamcorper \nlibero lorem vel mi. Quisque hendrerit \ndiam id nisl
-    consectetur, id finibus \nleo accumsan. Ut id fermentum tortor.\nDuis eleifend,
-    nibh in pulvinar euismod, \nipsum tellus pulvinar lorem, ac dapibus \nmauris
-    risus ac mi. Phasellus ullamcorper \naliquam posuere. Nullam fringilla tempus
-    \nlaoreet. Nullam laoreet est odio, sed facilisis\npurus viverra sit amet.\n\r\n\r\nPhasellus
-    elementum ex id gravida ultricies.\nNunc tincidunt lobortis lobortis. Proin consequat
-    \nmauris imperdiet urna varius aliquet. \nMaecenas hendrerit ante non lorem tincidunt
-    \nultricies. Vestibulum imperdiet pretium \nnulla, in hendrerit purus. Quisque
-    pellentesque,\npurus vel tincidunt condimentum, risus \npurus suscipit augue,
-    at viverra tortor neque \neu urna. Mauris tempus urna quis tortor \npellentesque,
-    eget fermentum justo porta. \nMorbi scelerisque risus quam. In hac habitasse
-    \nplatea dictumst. Nullam lectus odio, pharetra \nquis sem eu, malesuada eleifend
-    turpis. \nNulla facilisi. Sed a viverra purus, eget sagittis risus.\r\n\r\nNam
-    molestie condimentum pretium. Etiam fermentum,\n lorem nec placerat lobortis,
-    metus nulla \nsemper odio, vel tempor augue lorem \nquis ex. Duis consectetur
-    magna purus,\net accumsan lectus sagittis nec. Suspendisse \nsit amet feugiat
-    augue. Morbi congue in \nmauris sit amet molestie. Nullam condimentum \nsapien
-    in est semper accumsan. Ut at maximus \nante. Sed ac neque dui. Fusce tincidunt
-    \nante ut elit iaculis porttitor.\r\n\r\nCras egestas erat in orci placerat eleifend.\nPhasellus
-    aliquam neque id mauris commodo, \nsed convallis odio vestibulum. Aenean vitae
-    \nsodales turpis. Pellentesque habitant morbi \ntristique senectus et netus et
-    malesuada \nfames ac turpis egestas. Donec nibh mi, \nfringilla in sem non, gravida
-    fringilla leo. \nAliquam erat volutpat. Pellentesque \nvestibulum arcu et arcu
-    eleifend lobortis. \nQuisque posuere justo et magna molestie \npellentesque et
-    at odio. Duis eu commodo ex."
+  m_Text: "I know all of this seems like a lot to\ntake in, the memories I\u2019m
+    showing \nyou and the memories that are \ncoming back on its own.\n \nI was in
+    your place a long, long time \nago, and now I\u2019m on the other side,\ntrying
+    to prepare you for everything, \njust like my predecessor tried\nto prepare me.
+    \n\nBut alas, I can\u2019t do anything more than \nI\u2019ve already done. I
+    leave everything \nto you. Live and do whatever you \nfeel is right. Live so
+    that when it\u2019s \nyour time to be in my place, you \ncan be proud of yourself.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
   m_OffsetZ: 20
   m_CharacterSize: 1
   m_LineSpacing: 0.8
@@ -686,7 +660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc663b9f84a203a4a9732782a3271c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scrollSpeed: 20
+  scrollSpeed: 10
 --- !u!1 &1673468461
 GameObject:
   m_ObjectHideFlags: 0
