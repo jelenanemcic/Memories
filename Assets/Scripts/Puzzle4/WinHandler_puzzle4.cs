@@ -1,18 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinHandler_puzzle4 : MonoBehaviour
 {
     [SerializeField] private MouseDragBoard[] letters;
     [SerializeField] private FieldController[] fields;
 
+    [SerializeField] private string storySceneName = "Story9";
+    [SerializeField] private int puzzleNum = 9;
+    [SerializeField] private float delay = 0.5f;
+
     void Update()
     {
         bool isOver = IsOver();
         if (isOver)
         {
-            // Play the cutscene
+            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins!");
         }
     }
@@ -30,5 +36,11 @@ public class WinHandler_puzzle4 : MonoBehaviour
         }
 
         return true;
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(storySceneName);
     }
 }

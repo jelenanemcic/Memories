@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameWinHandler : MonoBehaviour
 {
@@ -13,15 +14,12 @@ public class GameWinHandler : MonoBehaviour
     [SerializeField] private FieldController twoSticksField;
     [SerializeField] private FieldController threeSticksField;
 
+    [SerializeField] private string storySceneName = "Story3";
+    [SerializeField] private int puzzleNum = 3;
+    [SerializeField] private float delay = 1f;
+
     private bool gameOver = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (!Input.GetKey(KeyCode.Mouse0))
@@ -29,8 +27,8 @@ public class GameWinHandler : MonoBehaviour
             gameOver = CheckGameOver();
             if (gameOver)
             {
-                // Play the cutscene
-
+                //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+                StartCoroutine(LoadLevelAfterDelay(delay));
                 Debug.Log("Player wins!");
             }
         }
@@ -43,5 +41,11 @@ public class GameWinHandler : MonoBehaviour
         bool threeSticks = threeSticksBoard.transform.position.x == threeSticksField.transform.position.x && threeSticksBoard.transform.position.z == threeSticksField.transform.position.z;
 
         return oneStick && twoSticks && threeSticks;
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(storySceneName);
     }
 }

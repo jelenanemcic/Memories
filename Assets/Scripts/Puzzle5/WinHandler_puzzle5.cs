@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class WinHandler_puzzle5 : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class WinHandler_puzzle5 : MonoBehaviour
     [SerializeField] private MouseDragBoard[] yellowSpheres;
     [SerializeField] private MouseDragBoard[] blueSpheres;
 
+    [SerializeField] private string storySceneName = "Story5";
+    [SerializeField] private int puzzleNum = 5;
+    [SerializeField] private float delay = 0.5f;
 
     void Update()
     {
@@ -19,7 +23,8 @@ public class WinHandler_puzzle5 : MonoBehaviour
         bool done = blue && yellow;
         if (done)
         {
-            // Play the cutscene
+            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins!");
         }
 
@@ -48,11 +53,16 @@ public class WinHandler_puzzle5 : MonoBehaviour
         return true;
     }
 
-
     private bool CheckIfOnField(FieldController currentField, MouseDragBoard currentSphere)
     {
         bool onField = currentField.transform.position.x == currentSphere.transform.position.x && currentField.transform.position.z == currentSphere.transform.position.z;
         return onField;
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(storySceneName);
     }
 
 }

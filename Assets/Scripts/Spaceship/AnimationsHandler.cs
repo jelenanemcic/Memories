@@ -22,7 +22,7 @@ public class AnimationsHandler : MonoBehaviour
 
     private void HandleAnimations()
     {
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump") && !animator.GetCurrentAnimatorStateInfo(0).IsName("Jump"))
         {
             animator.SetTrigger("jump");
         }

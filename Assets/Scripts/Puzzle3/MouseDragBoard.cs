@@ -6,7 +6,6 @@ public class MouseDragBoard : MonoBehaviour
 {
     private Vector3 mOffset;
     private float mZCoord;
-    private bool isDragging;
     private FieldController[] cells;
     private StartGameHandler startGameHandler;
     private bool gotItPressed = false;
@@ -25,7 +24,6 @@ public class MouseDragBoard : MonoBehaviour
 
     private void Update()
     {
-        isDragging = Input.GetMouseButtonDown(0);
         gotItPressed = startGameHandler.GetGotIsPressed();
     }
 
@@ -100,27 +98,27 @@ public class MouseDragBoard : MonoBehaviour
 
     private void MoveToClosest()
     {
-        if (!isDragging)
+        
+        
+        float minDistance = 0f;
+        bool firstPass = true;
+        currentCell.SetIsFree(true);
+        Transform currentTf = gameObject.transform;
+        foreach (FieldController cell in cells)
         {
-            float minDistance = 0f;
-            bool firstPass = true;
-            currentCell.SetIsFree(true);
-            Transform currentTf = gameObject.transform;
-            foreach (FieldController cell in cells)
+            if (cell.GetIsFree())
             {
-                if (cell.GetIsFree())
+                float currentDistance = CalculateDistance(currentTf, cell.transform);
+                if (firstPass || currentDistance < minDistance)
                 {
-                    float currentDistance = CalculateDistance(currentTf, cell.transform);
-                    if (firstPass || currentDistance < minDistance)
-                    {
-                        minDistance = currentDistance;
-                        currentCell = cell;
-                    }
-                    firstPass = false;
+                    minDistance = currentDistance;
+                    currentCell = cell;
                 }
+                firstPass = false;
             }
-            currentCell.SetIsFree(false);
-            gameObject.transform.position = new Vector3(currentCell.transform.position.x, yHeight, currentCell.transform.position.z);
         }
+        currentCell.SetIsFree(false);
+        gameObject.transform.position = new Vector3(currentCell.transform.position.x, yHeight, currentCell.transform.position.z);
+        
     }
 }

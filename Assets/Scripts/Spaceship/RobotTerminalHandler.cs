@@ -6,18 +6,11 @@ using UnityEngine.SceneManagement;
 public class RobotTerminalHandler : MonoBehaviour
 {
     [SerializeField] private Canvas terminalCanvas;
-    [SerializeField][Tooltip("Number of puzzle between 1 and 9.")] private int numberOfPuzzle;
+    [SerializeField][Tooltip("Number of puzzle between 1 and 9.")] private int numberOfPuzzle = 1;
 
-    // Start is called before the first frame update
     void Start()
     {
         terminalCanvas.enabled = false;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,7 +35,7 @@ public class RobotTerminalHandler : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene(numberOfPuzzle);
+                SceneManager.LoadScene("Puzzle"+numberOfPuzzle.ToString());
             }
         }
     }
