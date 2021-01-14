@@ -1,17 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HandleFinish : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private string storySceneName = "Story1";
+    [SerializeField] private int puzzleNum = 1;
+    [SerializeField] private float delay = 1f;
 
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
         
     }
@@ -20,8 +18,16 @@ public class HandleFinish : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
-            // Play the cutscene
+
+            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins");
         }
+    }
+
+    IEnumerator LoadLevelAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(storySceneName);
     }
 }
