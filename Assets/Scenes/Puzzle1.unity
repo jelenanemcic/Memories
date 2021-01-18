@@ -244,7 +244,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9dd1945def5c04fa88caa4040c9964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!1 &22248276
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,9 +416,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28699344755ac1746be039eca1abbbb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  storySceneName: Story1
-  puzzleNum: 1
-  delay: 1
 --- !u!1 &76782335
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,7 +677,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9dd1945def5c04fa88caa4040c9964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!1 &209551297
 GameObject:
   m_ObjectHideFlags: 0
@@ -739,7 +734,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 98424b7be437cc84d860ff0ace6335f1, type: 3}
+    m_Font: {fileID: 12800000, guid: 778b964c50b5b22488619aae133269b7, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -977,7 +972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49eafb89315578478407b32de135e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &350626074
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1312,9 +1306,9 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_NormalColor: {r: 0.75294125, g: 0.21176472, b: 0.7411765, a: 1}
+    m_HighlightedColor: {r: 0.75294125, g: 0.21176472, b: 0.7411765, a: 0.6862745}
+    m_PressedColor: {r: 0.75294125, g: 0.21176472, b: 0.7411765, a: 0.45490196}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1.89
@@ -1480,7 +1474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.9622642, g: 0.4520995, b: 0.14070843, a: 1}
+  m_Color: {r: 0.7529412, g: 0.21176471, b: 0.7411765, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1629,7 +1623,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49eafb89315578478407b32de135e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &538864260
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1753,7 +1746,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49eafb89315578478407b32de135e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &635583489
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1877,7 +1869,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49eafb89315578478407b32de135e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &653924931
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2551,7 +2542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9dd1945def5c04fa88caa4040c9964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!1 &1024585821
 GameObject:
   m_ObjectHideFlags: 0
@@ -2890,7 +2880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -2964,18 +2954,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 98424b7be437cc84d860ff0ace6335f1, type: 3}
-    m_FontSize: 30
+    m_Font: {fileID: 12800000, guid: 778b964c50b5b22488619aae133269b7, type: 3}
+    m_FontSize: 25
     m_FontStyle: 1
     m_BestFit: 0
-    m_MinSize: 3
+    m_MinSize: 2
     m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -3635,7 +3625,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49eafb89315578478407b32de135e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &1808334668
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3982,7 +3971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9dd1945def5c04fa88caa4040c9964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!1 &2075548090
 GameObject:
   m_ObjectHideFlags: 0
@@ -4016,7 +4004,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f49eafb89315578478407b32de135e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &2075548092
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4140,7 +4127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b9dd1945def5c04fa88caa4040c9964, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thrust: 2000
 --- !u!54 &2135140236
 Rigidbody:
   m_ObjectHideFlags: 0
