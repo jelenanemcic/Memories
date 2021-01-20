@@ -74,10 +74,15 @@ public class LoadSaveManager : MonoBehaviour
             {
                 LockRoom(i - 1);
                 SwitchOnLights(i - 1);
-            }else if(solved == 1)
+            }else if(solved == 1 && i!=9)
             {
                 LockRoom(i - 1);
                 TurnLightsOff(i - 1);
+            }else if(solved == 1 && i == 9)
+            {
+                LockRoom(i - 1);
+                player.position = new Vector3(57.8f, 1.1f, -0.25f);
+                player.rotation = Quaternion.Euler(0f, 90f, 0f);
             }
         }
     }

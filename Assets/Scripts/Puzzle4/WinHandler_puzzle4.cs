@@ -17,7 +17,7 @@ public class WinHandler_puzzle4 : MonoBehaviour
         bool isOver = IsOver();
         if (isOver)
         {
-            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
             StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins!");
         }

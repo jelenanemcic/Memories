@@ -23,7 +23,7 @@ public class WinHandler_puzzle5 : MonoBehaviour
         bool done = blue && yellow;
         if (done)
         {
-            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
             StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins!");
         }

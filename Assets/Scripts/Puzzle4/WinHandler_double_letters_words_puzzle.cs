@@ -19,7 +19,7 @@ public class WinHandler_double_letters_words_puzzle : MonoBehaviour
         bool isOver = IsMonoOver() && IsDoubleOver();
         if (isOver)
         {
-            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
             StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins!");
         }

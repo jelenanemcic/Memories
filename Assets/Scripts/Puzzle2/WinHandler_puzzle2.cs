@@ -27,7 +27,7 @@ public class WinHandler_puzzle2 : MonoBehaviour
             gameOver = CheckGameOver();
             if (gameOver)
             {
-                //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+                PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
                 StartCoroutine(LoadLevelAfterDelay(delay));
                 Debug.Log("Player wins!");
             }

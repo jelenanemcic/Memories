@@ -13,6 +13,7 @@ public class AchievementsManager : MonoBehaviour
 
 	public Canvas achievementsCanvas;
 	public Canvas gameCanvas;
+	public GameObject achievementsPanel;
 	private bool opened = false;
 	private List<string> achievements = new List<string>();
 
@@ -23,6 +24,8 @@ public class AchievementsManager : MonoBehaviour
 
 		if (achievementsCanvas)
 			achievementsCanvas.enabled = false;
+
+		LoadAchievements();
 
 		// test
 	//	achievements.Add("Puzzle 1");
@@ -39,17 +42,20 @@ public class AchievementsManager : MonoBehaviour
 			gameCanvas.enabled = false;
 			opened = true;
 			if (achievements.Count == 0) {
-				achievementsCanvas.GetComponentInChildren<Text>().text = "You currently have no achievements. \n Solve some puzzles to earn them!";
+				// achievementsCanvas.GetComponentInChildren<Text>().text = "You currently have no achievements. \n Solve some puzzles to earn them!";
+				achievementsPanel.GetComponentInChildren<Text>().text = "You currently have no achievements. \n Solve some puzzles to earn them!";
 			}
 			else
             {
-				string canvasText = "Current Achievements: \n";
+				string canvasText = "Current Achievements: \n \n";
+				int i = 1;
 				foreach (string achievement in achievements)
 				{
-					canvasText += achievement;
+					canvasText += i.ToString() + ".  " + achievement + " solved";
 					canvasText += "\n";
+					i++;
 				}
-				achievementsCanvas.GetComponentInChildren<Text>().text = canvasText;
+				achievementsPanel.GetComponentInChildren<Text>().text = canvasText;
 			}
 		} 
 	}
@@ -69,5 +75,17 @@ public class AchievementsManager : MonoBehaviour
 	public void addAchievement(string achievement)
     {
 		achievements.Add(achievement);
+    }
+
+	private void LoadAchievements()
+    {
+		for(int i = 1; i < 10; i++)
+        {
+			int solved = PlayerPrefs.GetInt("puzzle" + i.ToString(), 0);
+			if(solved == 1)
+            {
+				achievements.Add("Puzzle " + i.ToString());
+            }
+        }
     }
 }

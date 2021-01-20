@@ -12,17 +12,14 @@ public class DoorOpeningHandler : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Player")
         {
-            animator.SetBool("character_nearby", true);
+            if(animator != null)
+            {
+                animator.SetBool("character_nearby", true);
+            }
         }
     }
 
@@ -30,7 +27,10 @@ public class DoorOpeningHandler : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            animator.SetBool("character_nearby", false);
+            if (animator != null)
+            {
+                animator.SetBool("character_nearby", false);
+            }
         }
     }
 }

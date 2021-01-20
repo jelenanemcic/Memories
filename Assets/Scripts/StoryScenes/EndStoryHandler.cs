@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class EndStoryHandler : MonoBehaviour
 {
 
-    [SerializeField] private string spaceShipScene = "Game_Scene_1";
+    [SerializeField] private string spaceShipSceneName = "Game_Scene_1";
     [SerializeField] private float duration = 30f;
 
     void Start()
@@ -18,6 +18,6 @@ public class EndStoryHandler : MonoBehaviour
     private IEnumerator LoadLevelAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadScene(spaceShipScene);
+        SceneManager.LoadScene(spaceShipSceneName);
     }
 }
