@@ -7,8 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-	[SerializeField] private string spaceShipSceneName = "Game_Scene_1";
-	[SerializeField] private Button resumeButton;
+	[SerializeField, Tooltip("Scene where the game starts.")] 
+	private string spaceShipSceneName = "Game_Scene_1";
+
+	[SerializeField, Tooltip("How to play scene.")]
+	private string howToPlaySceneName = "HowToPlay";
+
+	[SerializeField, Tooltip("Resume button.")] 
+	private Button resumeButton;
 
 	public static MenuManager am;
 
@@ -19,12 +25,6 @@ public class MenuManager : MonoBehaviour
 		if (am == null)
 			am = gameObject.GetComponent<MenuManager>();
 		CheckForSaves();
-	}
-
-	public void BeginGame()
-	{
-		ClearAllSaves();
-		SceneManager.LoadScene(spaceShipSceneName);
 	}
 
 	private void CheckForSaves()
@@ -45,11 +45,8 @@ public class MenuManager : MonoBehaviour
 		Application.Quit();
     }
 
-	private void ClearAllSaves()
+	public void HowToPlay()
     {
-		for(int i = 1; i < 10; i++)
-        {
-			PlayerPrefs.SetInt("puzzle" + i.ToString(), 0);
-        }
+		SceneManager.LoadScene(howToPlaySceneName);
     }
 }
