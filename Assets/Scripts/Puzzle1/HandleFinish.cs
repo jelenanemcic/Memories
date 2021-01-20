@@ -19,7 +19,7 @@ public class HandleFinish : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
 
-            //PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
+            PlayerPrefs.SetInt("puzzle" + puzzleNum.ToString(), 1);
             StartCoroutine(LoadLevelAfterDelay(delay));
             Debug.Log("Player wins");
         }
