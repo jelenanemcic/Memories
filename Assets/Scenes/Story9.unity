@@ -385,6 +385,7 @@ GameObject:
   - component: {fileID: 576633621}
   - component: {fileID: 576633620}
   - component: {fileID: 576633619}
+  - component: {fileID: 576633622}
   m_Layer: 0
   m_Name: StoryAudio
   m_TagString: Untagged
@@ -417,7 +418,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a2006cc7f93e8714f9dfdef56bdaf061, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -515,6 +516,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &576633622
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576633618}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2d2da8283eeefaa4cb0c5d5ec88616cd, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.9
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &679716963
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,14 +813,14 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078461205}
-  m_Text: "Hello. \n\nI know you\u2019re disoriented and \nconfused, but listen to
-    me. \n\nI don\u2019t know how much you already \nremember, but memories will
-    come \nto you, just give it a little time. \n\nIn the meantime, I set up messages
+  m_Text: "Hello. \n\nI know you\u2019re disoriented and \nconfused, but listen.
+    \n\nI don\u2019t know how much you already \nremember, but memories will come
+    \nto you, just give it a little time. \n\nIn the meantime, I set up messages
     on \nthese terminals to help jog your memory. \n\nThe doors are locked with some
-    \nsimple puzzles which will help \ncalibrate you perfectly. \n\nJust listen to
-    the message, \nsolve the puzzle and move \nto the next terminal. \n\nBy the end
-    of it, you\u2019ll have all the \nmemories, and the ship will be \nback in working
-    condition. \n\nI\u2019m sorry I couldn\u2019t be here to \nexplain everything
+    \nsimple puzzles which will help \ncalibrate you perfectly. \n\nJust solve the
+    puzzle,\nlisten to the message, \nand move \nto the next terminal. \n\nBy the
+    end of it, you\u2019ll have all the \nmemories, and the ship will be \nback in
+    working condition. \n\nI\u2019m sorry I couldn\u2019t be here to \nexplain everything
     in person \nto you, but this is how it works. \n\nYou\u2019ll always have me
     and every \none of us in your memories. \n\nWe are all one. \nBut it is your
     time now. \nIt is your time to try and find a \nway for biological life to accept
