@@ -150,9 +150,9 @@ public class LoadSaveManager : MonoBehaviour
         // start room position
         positionsList.Add(new Vector3(-176f, 1.1f, 0f));
         // room1 position
-        positionsList.Add(new Vector3(-136f, 1.1f, 12f));
+        positionsList.Add(new Vector3(-152f, 1.1f, -0f));
         // room2 position
-        positionsList.Add(new Vector3(-90f, 1.1f, 24f));
+        positionsList.Add(new Vector3(-116f, 1.1f, 0f));
         // room3 position
         positionsList.Add(new Vector3(-58f, 1.1f, 32f));
         // room4 position
@@ -174,7 +174,7 @@ public class LoadSaveManager : MonoBehaviour
         // room1 rotation
         rotationsList.Add(Quaternion.Euler(0f, 0f, 0f));
         // room2 rotation
-        rotationsList.Add(Quaternion.Euler(0f, 90f, 0f));
+        rotationsList.Add(Quaternion.Euler(0f, 0f, 0f));
         // room3 rotation
         rotationsList.Add(Quaternion.Euler(0f, 0f, 0f));
         // room4 rotation
